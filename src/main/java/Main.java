@@ -24,17 +24,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        /*
-        SignedToken.newBuilder()
-                   .setIssuer(issuer)
-                   .setSubject(sessionType)
-                   .setMessage(user)
-                   .setIssuedNow()
-                   .setExpirationFromNow(Duration.ofDays(1))
-                   .toToken()
-                   .signToken(secret);
-        */
-
+        String s = SignedToken.newBuilder()
+                              .setIssuer("issuer")
+                              .setSubject("")
+                              .setMessage("user")
+                              .setIssuedNow()
+                              .setExpirationFromNow(Duration.ofDays(1))
+                              .toToken()
+                              .signToken("secret");
+        System.out.println("token = " + s);
+        //AutherLoginHandlerFactory.setAppToken(token);
         // create subscription for a specific event type on default feed
         DXFeedSubscription<Quote> sub = DXFeed.getInstance().createSubscription(Quote.class);
 

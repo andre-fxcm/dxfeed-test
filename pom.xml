@@ -25,6 +25,12 @@
             <groupId>com.devexperts.mdd</groupId>
             <artifactId>auther-api</artifactId>
             <version>417</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.sun.jdmk</groupId>
+                    <artifactId>jmxtools</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
